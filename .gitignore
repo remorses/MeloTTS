@@ -12,3 +12,4 @@ wire
 *.wav
 .DS_Store
 node_modules
+*.mp3

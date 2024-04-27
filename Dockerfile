@@ -24,6 +24,7 @@ COPY ./melo /app/melo
 
 RUN ls
 ENV PYTHONUNBUFFERED=1
-
+ENV PORT=8888
 # CMD ["sleep", "infinity"]
-CMD ["python3", "-m","melo.app", "--port", "8888"]
+# CMD ["python3", "-m","melo.app", "--port", "8888"]
+CMD ["python3", "-m", "cog.server.http"]

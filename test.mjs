@@ -20,9 +20,15 @@ const json = await res.json()
 console.log(json)
 
 function dataURLtoFile(dataurl) {
+    if (!dataurl) {
+        return
+    }
     const base64Data = dataurl.split(',')[1]
     const buffer = Buffer.from(base64Data, 'base64')
     return buffer
 }
 
-fs.writeFileSync('out.mp3', dataURLtoFile(json.output))
+for (const [i, item] of json.output.entries()) {
+    const data = dataURLtoFile(item.audio)
+    fs.writeFileSync(`out_${i}.mp3`, data)
+}
