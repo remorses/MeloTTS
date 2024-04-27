@@ -13,3 +13,6 @@ wire
 .DS_Store
 node_modules
 *.mp3
+
+processed
+checkpoints_v2/*

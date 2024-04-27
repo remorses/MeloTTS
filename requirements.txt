@@ -1,9 +1,9 @@
 cog
 txtsplit
-torch==2.2.1
-torchaudio==2.2.1
+torch>=2.2.1
+torchaudio>=2.2.1
 cached_path
-transformers==4.38.1
+transformers
 # mecab-python3==1.0.5
 num2words==0.5.12
 hf_transfer
@@ -30,3 +30,4 @@ tqdm
 tensorboard==2.16.2
 loguru==0.7.2
 soundfile
+myshell-openvoice @ git+https://github.com/remorses/OpenVoice.git@fixed

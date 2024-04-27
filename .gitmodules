@@ -1,0 +1,3 @@
+[submodule "OpenVoice"]
+	path = OpenVoice
+	url = https://github.com/remorses/OpenVoice
