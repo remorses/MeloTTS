@@ -1,0 +1,27 @@
+openapi: 3.0.2
+info:
+  title: Cog
+  version: 0.1.0
+paths:
+  "/shutdown":
+    post:
+      summary: Start Shutdown
+      operationId: start_shutdown_shutdown_post
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Start Shutdown Shutdown Post
+  "/health-check":
+    get:
+      summary: Healthcheck Startup Failed
+      operationId: healthcheck_startup_failed_health_check_get
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Healthcheck Startup Failed Health Check Get

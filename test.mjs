@@ -1,0 +1,28 @@
+import fs from 'fs'
+const res = await fetch('http://0.0.0.0:8888/predictions', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        input: {
+            text: 'This t t s model is so good i cannot believe it, do you?.',
+            speed: 1,
+            speaker: 'EN-BR',
+            language: 'EN',
+        },
+        stream: true,
+    }),
+})
+
+console.log(res.status)
+const json = await res.json()
+console.log(json)
+
+function dataURLtoFile(dataurl) {
+    const base64Data = dataurl.split(',')[1]
+    const buffer = Buffer.from(base64Data, 'base64')
+    return buffer
+}
+
+fs.writeFileSync('out.mp3', dataURLtoFile(json.output))

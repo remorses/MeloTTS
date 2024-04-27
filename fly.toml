@@ -1,0 +1,23 @@
+
+app = "openvoice-test" # Change this to your app's name
+primary_region = "ord" # If you change this, ensure it's to a region that offers GPUs
+[[vm]]
+size = "performance-2x"
+memory = "8gb"
+
+
+# experimental.cmd = [
+#     "python3",
+#     "-m",
+#     "melo.app",
+#     "--port",
+#     "8888",
+# ]
+# experimental.cmd = ["sleep", "infinity"]
+
+
+# Use a volume to store LLMs or any big file that doesn't fit in a Docker image
+# This whole volume will be the non-root user's home directory
+[mounts]
+source = "openvoice_checkpoints"
+destination = "/.cache"

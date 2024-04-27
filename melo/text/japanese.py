@@ -11,7 +11,8 @@ punctuation = ["!", "?", "…", ",", ".", "'", "-"]
 try:
     import MeCab
 except ImportError as e:
-    raise ImportError("Japanese requires mecab-python3 and unidic-lite.") from e
+    pass
+    # raise ImportError("Japanese requires mecab-python3 and unidic-lite.") from e
 from num2words import num2words
 
 _CONVRULES = [
@@ -364,7 +365,7 @@ def hira2kata(text: str) -> str:
 
 _SYMBOL_TOKENS = set(list("・、。？！"))
 _NO_YOMI_TOKENS = set(list("「」『』―（）［］[]"))
-_TAGGER = MeCab.Tagger()
+# _TAGGER = MeCab.Tagger()
 
 
 def text2kata(text: str) -> str:
@@ -566,8 +567,8 @@ def distribute_phone(n_phone, n_word):
 
 # tokenizer = AutoTokenizer.from_pretrained('cl-tohoku/bert-base-japanese-v3')
 
-model_id = 'tohoku-nlp/bert-base-japanese-v3'
-tokenizer = AutoTokenizer.from_pretrained(model_id)
+# model_id = 'tohoku-nlp/bert-base-japanese-v3'
+# tokenizer = AutoTokenizer.from_pretrained(model_id)
 def g2p(norm_text):
 
     tokenized = tokenizer.tokenize(norm_text)
@@ -618,7 +619,7 @@ def get_bert_feature(text, word2ph, device):
 
 
 if __name__ == "__main__":
-    # tokenizer = AutoTokenizer.from_pretrained("./bert/bert-base-japanese-v3")
+    # fly  = AutoTokenizer.from_pretrained("./bert/bert-base-japanese-v3")
     text = "こんにちは、世界！..."
     text = 'ええ、僕はおきなと申します。こちらの小さいわらべは杏子。ご挨拶が遅れてしまいすみません。あなたの名は?'
     text = 'あの、お前以外のみんなは、全員生きてること?'

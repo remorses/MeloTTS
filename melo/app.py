@@ -11,11 +11,11 @@ import click
 device = 'auto'
 models = {
     'EN': TTS(language='EN', device=device),
-    'ES': TTS(language='ES', device=device),
-    'FR': TTS(language='FR', device=device),
-    'ZH': TTS(language='ZH', device=device),
-    'JP': TTS(language='JP', device=device),
-    'KR': TTS(language='KR', device=device),
+    # 'ES': TTS(language='ES', device=device),
+    # 'FR': TTS(language='FR', device=device),
+    # 'ZH': TTS(language='ZH', device=device),
+    # 'JP': TTS(language='JP', device=device),
+    # 'KR': TTS(language='KR', device=device),
 }
 speaker_ids = models['EN'].hps.data.spk2id
 
@@ -55,7 +55,7 @@ with gr.Blocks() as demo:
 @click.option('--host', '-h', default=None)
 @click.option('--port', '-p', type=int, default=None)
 def main(share, host, port):
-    demo.queue(api_open=False).launch(show_api=False, share=share, server_name=host, server_port=port)
+    demo.queue(api_open=False).launch(show_api=False, share=share, server_name='[::1]', server_port=port)
 
 if __name__ == "__main__":
     main()

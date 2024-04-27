@@ -8,18 +8,20 @@ cwd = os.path.dirname(os.path.abspath(__file__))
 
 with open('requirements.txt') as f:
     reqs = f.read().splitlines()
+    # remove comments
+    reqs = [r for r in reqs if not r.startswith('#')]
 class PostInstallCommand(install):
     """Post-installation for installation mode."""
     def run(self):
         install.run(self)
-        os.system('python -m unidic download')
+        # os.system('python -m unidic download')
 
 
 class PostDevelopCommand(develop):
     """Post-installation for development mode."""
     def run(self):
         develop.run(self)
-        os.system('python -m unidic download')
+        # os.system('python -m unidic download')
 
 setup(
     name='melotts',
