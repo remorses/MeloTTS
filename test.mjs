@@ -1,3 +1,7 @@
+import playSound from 'play-sound'
+
+const player = playSound({})
+
 import fs from 'fs'
 const res = await fetch('http://0.0.0.0:8888/predictions', {
     method: 'POST',
@@ -30,5 +34,9 @@ function dataURLtoFile(dataurl) {
 
 for (const [i, item] of json.output.entries()) {
     const data = dataURLtoFile(item.audio)
-    fs.writeFileSync(`out_${i}.mp3`, data)
+    const p = `out_${i}.wav`
+    fs.writeFileSync(p, data)
+    await new Promise((resolve, rej) =>
+        player.play(p, {}, (err) => (err ? rej(err) : resolve())),
+    )
 }

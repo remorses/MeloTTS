@@ -8,11 +8,23 @@ importers:
 
   .:
     dependencies:
+      '@types/play-sound':
+        specifier: ^1.1.2
+        version: 1.1.2
       event-source-plus:
         specifier: ^0.0.6
         version: 0.0.6
+      play-sound:
+        specifier: ^1.1.6
+        version: 1.1.6
 
 packages:
+
+  '@types/node@20.12.7':
+    resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
+
+  '@types/play-sound@1.1.2':
+    resolution: {integrity: sha512-alq2D5sBtVcq5bzL/yLr5SSQ7B4VTIkX728V3nYfo6TaCtnwFLdHsFgy+N9oCjh67OOZQnj7kkJauWNW0L8bWw==}
 
   destr@2.0.3:
     resolution: {integrity: sha512-2N3BOUU4gYMpTP24s5rF5iP7BDr7uNTCs4ozw3kf/eKfvWSIu93GEBi5m427YoyJoeOzQ5smuu4nNAPGb8idSQ==}
@@ -20,22 +32,46 @@ packages:
   event-source-plus@0.0.6:
     resolution: {integrity: sha512-cIgaG+LGOamBVDETY+hoXh0hT35F4wwhZThDp1MXPWgUpmsXjOXoUX0ReFfmK84zIlA08daRZibltjnfeNcsFA==}
 
+  find-exec@1.0.3:
+    resolution: {integrity: sha512-gnG38zW90mS8hm5smNcrBnakPEt+cGJoiMkJwCU0IYnEb0H2NQk0NIljhNW+48oniCriFek/PH6QXbwsJo/qug==}
+
   node-fetch-native@1.6.4:
     resolution: {integrity: sha512-IhOigYzAKHd244OC0JIMIUrjzctirCmPkaIfhDeGcEETWof5zKYUW7e7MYvChGWh/4CJeXEgsRyGzuF334rOOQ==}
 
   ofetch@1.3.4:
     resolution: {integrity: sha512-KLIET85ik3vhEfS+3fDlc/BAZiAp+43QEC/yCo5zkNoY2YaKvNkOaFr/6wCFgFH1kuYQM5pMNi0Tg8koiIemtw==}
 
+  play-sound@1.1.6:
+    resolution: {integrity: sha512-09eO4QiXNFXJffJaOW5P6x6F5RLihpLUkXttvUZeWml0fU6x6Zp7AjG9zaeMpgH2ZNvq4GR1ytB22ddYcqJIZA==}
+
+  shell-quote@1.8.1:
+    resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
+
   ufo@1.5.3:
     resolution: {integrity: sha512-Y7HYmWaFwPUmkoQCUIAYpKqkOf+SbVj/2fJJZ4RJMCfZp0rTGwRbzQD+HghfnhKOjL9E01okqz+ncJskGYfBNw==}
 
+  undici-types@5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+
 snapshots:
+
+  '@types/node@20.12.7':
+    dependencies:
+      undici-types: 5.26.5
+
+  '@types/play-sound@1.1.2':
+    dependencies:
+      '@types/node': 20.12.7
 
   destr@2.0.3: {}
 
   event-source-plus@0.0.6:
     dependencies:
       ofetch: 1.3.4
+
+  find-exec@1.0.3:
+    dependencies:
+      shell-quote: 1.8.1
 
   node-fetch-native@1.6.4: {}
 
@@ -45,4 +81,12 @@ snapshots:
       node-fetch-native: 1.6.4
       ufo: 1.5.3
 
+  play-sound@1.1.6:
+    dependencies:
+      find-exec: 1.0.3
+
+  shell-quote@1.8.1: {}
+
   ufo@1.5.3: {}
+
+  undici-types@5.26.5: {}
